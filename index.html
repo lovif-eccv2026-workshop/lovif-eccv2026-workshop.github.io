@@ -434,6 +434,216 @@
         padding: 20px;
       }
     }
+
+<style>
+/* =========================
+   Competition Cards
+========================= */
+
+.competition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.competition-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.96), rgba(248,250,255,0.92));
+  border: 1px solid rgba(90, 105, 180, 0.18);
+  box-shadow: 0 18px 45px rgba(31, 45, 90, 0.08);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.competition-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99,102,241,0.20), transparent 32%),
+    radial-gradient(circle at 85% 10%, rgba(14,165,233,0.18), transparent 35%),
+    radial-gradient(circle at 75% 90%, rgba(236,72,153,0.13), transparent 34%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.competition-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(99,102,241,0.45);
+  box-shadow: 0 28px 70px rgba(31, 45, 90, 0.16);
+}
+
+.competition-card:hover::before {
+  opacity: 1;
+}
+
+.competition-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.competition-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.competition-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #3730a3;
+  background: rgba(99,102,241,0.10);
+  border: 1px solid rgba(99,102,241,0.18);
+}
+
+.competition-status {
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #047857;
+  background: rgba(16,185,129,0.12);
+  border: 1px solid rgba(16,185,129,0.20);
+  white-space: nowrap;
+}
+
+.competition-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  line-height: 1.25;
+  color: #111827;
+}
+
+.competition-desc {
+  margin: 0 0 22px;
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.competition-meta {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.competition-meta-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  align-items: start;
+  font-size: 14px;
+}
+
+.competition-meta-row strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.competition-meta-row span {
+  color: #4b5563;
+  line-height: 1.55;
+}
+
+.organizer-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.organizer-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #374151;
+  background: rgba(17,24,39,0.05);
+  border: 1px solid rgba(17,24,39,0.08);
+}
+
+.competition-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.competition-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.competition-link.primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+  box-shadow: 0 10px 26px rgba(79,70,229,0.24);
+}
+
+.competition-link.secondary {
+  color: #374151;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(17,24,39,0.10);
+}
+
+.competition-link:hover {
+  transform: translateX(3px);
+}
+
+.competition-card.placeholder {
+  border-style: dashed;
+  background: rgba(255,255,255,0.62);
+}
+
+.competition-card.placeholder .competition-status {
+  color: #92400e;
+  background: rgba(245,158,11,0.12);
+  border-color: rgba(245,158,11,0.22);
+}
+
+@media (max-width: 640px) {
+  .competition-card {
+    padding: 22px;
+  }
+
+  .competition-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .competition-meta-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}   
   </style>
 </head>
 <body>
@@ -449,6 +659,7 @@
         <a href="#speakers">Speakers</a>
         <a href="#dates">Dates</a>
         <a href="#submission">Submission</a>
+        <a href="#competitions">Competitions</a>
         <a href="#team">Team</a>
         <a href="#venue">Venue</a>
       </nav>
@@ -591,6 +802,114 @@
       </div>
     </section>
 
+    <section id="competitions">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Competitions</h2>
+        <p>
+          LoViF 2026 hosts a series of challenges and competitions to promote practical benchmarks, robust algorithms, and real-world low-level vision systems.
+        </p>
+      </div>
+    </div>
+
+    <div class="competition-grid">
+
+      <!-- Competition Card 01 -->
+      <article class="competition-card">
+        <div class="competition-top">
+          <div class="competition-badge">ECCV 2026 Challenge</div>
+          <div class="competition-status">Open</div>
+        </div>
+
+        <h3>LoViF 2026 The Challenge on Real-World All-in-One Image Restoration @ ECCV 2026</h3>
+
+        <p class="competition-desc">
+          Our goal is to introduce a new and applicable benchmark for the development of real-world all-in-one image restoration algorithms.
+        </p>
+
+        <div class="competition-meta">
+          <div class="competition-meta-row">
+            <strong>Platform</strong>
+            <span>Codabench Competition</span>
+          </div>
+
+          <div class="competition-meta-row">
+            <strong>Institutes</strong>
+            <span>
+              Nanjing University of Science and Technology;<br>
+              Sun Yat-sen University (Shenzhen);<br>
+              University of Science and Technology of China
+            </span>
+          </div>
+
+          <div class="competition-meta-row">
+            <strong>Organizers</strong>
+            <span>
+              <div class="organizer-chips">
+                <span class="organizer-chip">Xiang Chen</span>
+                <span class="organizer-chip">Hao Li</span>
+                <span class="organizer-chip">Xin Li</span>
+              </div>
+            </span>
+          </div>
+
+          <div class="competition-meta-row">
+            <strong>Contact</strong>
+            <span>
+              <a href="mailto:chenxiang@njust.edu.cn">chenxiang@njust.edu.cn</a>,
+              <a href="mailto:haoli@njust.edu.cn">haoli@njust.edu.cn</a>,
+              <a href="mailto:xin.li@ustc.edu.cn">xin.li@ustc.edu.cn</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="competition-actions">
+          <a class="competition-link primary" href="https://www.codabench.org/competitions/16376/" target="_blank" rel="noopener noreferrer">
+            Visit Challenge →
+          </a>
+          <a class="competition-link secondary" href="mailto:chenxiang@njust.edu.cn">
+            Contact Organizer
+          </a>
+        </div>
+      </article>
+
+      <!-- Placeholder for future competitions -->
+      <article class="competition-card placeholder">
+        <div class="competition-top">
+          <div class="competition-badge">Coming Soon</div>
+          <div class="competition-status">TBD</div>
+        </div>
+
+        <h3>More LoViF 2026 Competitions</h3>
+
+        <p class="competition-desc">
+          Additional competitions and challenge tracks related to low-level vision, generative restoration, enhancement, quality assessment, and real-world visual processing will be announced soon.
+        </p>
+
+        <div class="competition-meta">
+          <div class="competition-meta-row">
+            <strong>Platform</strong>
+            <span>TBD</span>
+          </div>
+
+          <div class="competition-meta-row">
+            <strong>Details</strong>
+            <span>Competition title, organizers, dataset, rules, and submission links will be updated later.</span>
+          </div>
+        </div>
+
+        <div class="competition-actions">
+          <a class="competition-link secondary" href="#competitions">
+            Stay Tuned
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
     <section id="speakers">
       <div class="container">
         <div class="section-head">
@@ -604,6 +923,7 @@
       </div>
     </section>
 
+    
     <section id="dates">
       <div class="container">
         <div class="section-head">
