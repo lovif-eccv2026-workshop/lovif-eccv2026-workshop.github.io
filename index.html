@@ -643,8 +643,10 @@
     grid-template-columns: 1fr;
     gap: 4px;
   }
-}   
-.speakers-grid {
+}  
+    }
+/*###speakers#####*/
+    #speakers .speakers-grid {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 18px;
@@ -703,8 +705,129 @@
     line-height: 1.55;
   }
 
-  @media (max-width: 1100px) {
-    .speakers-grid {
+  .previous-speakers {
+    margin-top: 42px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .previous-speakers-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  .previous-speakers-head h3 {
+    margin: 0 0 5px;
+    font-size: 1.25rem;
+  }
+
+  .previous-speakers-head p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .previous-edition-link {
+    flex: none;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .previous-edition-link:hover,
+  .previous-edition-link:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .previous-speakers-marquee {
+    position: relative;
+    overflow: hidden;
+    padding: 4px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+
+  .previous-speakers-track {
+    display: flex;
+    width: max-content;
+    gap: 18px;
+    animation: previous-speakers-scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  .previous-speakers-group {
+    display: flex;
+    gap: 18px;
+  }
+
+  .previous-speakers-marquee:hover .previous-speakers-track,
+  .previous-speakers-marquee:focus-within .previous-speakers-track {
+    animation-play-state: paused;
+  }
+
+  .previous-speaker-card {
+    width: 300px;
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 17px;
+    color: inherit;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .previous-speaker-card:hover,
+  .previous-speaker-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(124, 156, 255, 0.5);
+    background: rgba(124, 156, 255, 0.09);
+  }
+
+  .previous-speaker-photo {
+    width: 76px;
+    height: 76px;
+    flex: 0 0 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .previous-speaker-info {
+    min-width: 0;
+  }
+
+  .previous-speaker-info strong {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .previous-speaker-info span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  @keyframes previous-speakers-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 9px));
+    }
+  }
+
+  @media (max-width: 900px) {
+    #speakers .speakers-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -717,10 +840,36 @@
   }
 
   @media (max-width: 760px) {
-    .speakers-grid {
+    #speakers .speakers-grid {
       grid-template-columns: 1fr;
     }
+
+    .previous-speakers-head {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .previous-speaker-card {
+      width: 260px;
+    }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .previous-speakers-marquee {
+      overflow-x: auto;
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+
+    .previous-speakers-track {
+      animation: none;
+    }
+
+    .previous-speakers-group[aria-hidden="true"] {
+      display: none;
+    }
+  }
+  
   </style>
 </head>
 <body>
@@ -930,13 +1079,11 @@
 
 
 
-
-
 <section id="speakers">
   <div class="container">
     <div class="section-head">
       <div>
-        <h2>Our Speakers (TBD)</h2>
+        <h2>Speakers</h2>
       </div>
     </div>
 
@@ -945,7 +1092,7 @@
       <article class="speaker-card">
         <img
           class="speaker-photo"
-          src="https://engineering.jhu.edu/wp-content/uploads/2020/07/patel-voshal-e1596489780626-100x100.jpg"
+          src="https://engineering.jhu.edu/vpatel36/wp-content/uploads/2017/07/vishal-1-e1548137289434-768x1024.jpg"
           alt="Portrait of Vishal M. Patel"
           loading="lazy"
         />
@@ -1047,6 +1194,84 @@
         </h3>
         <p class="speaker-affiliation">INSAIT, Sofia University “St. Kliment Ohridski”</p>
       </article>
+    </div>
+
+    <div class="previous-speakers">
+      <div class="previous-speakers-head">
+        <div>
+          <h3>Previous Speakers</h3>
+          <p>Invited speakers from LoViF @ CVPR 2026</p>
+        </div>
+        <a
+          class="previous-edition-link"
+          href="https://lovif-cvpr2026-workshop.github.io/#speakers"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View previous edition →
+        </a>
+      </div>
+
+      <div class="previous-speakers-marquee" aria-label="Previous LoViF speakers">
+        <div class="previous-speakers-track">
+          <div class="previous-speakers-group">
+            <a class="previous-speaker-card" href="https://scholar.google.com/citations?user=BxbKTYkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
+              <img class="previous-speaker-photo" src="https://lovif-cvpr2026-workshop.github.io/figs/DimitrisSamaras.png" alt="Portrait of Dimitris Samaras" loading="lazy" />
+              <span class="previous-speaker-info">
+                <strong>Dimitris Samaras</strong>
+                <span>Stony Brook University</span>
+              </span>
+            </a>
+
+            <a class="previous-speaker-card" href="https://tanrobby.github.io/" target="_blank" rel="noopener noreferrer">
+              <img class="previous-speaker-photo" src="https://lovif-cvpr2026-workshop.github.io/figs/robby_image_v3.jpg" alt="Portrait of Robby T. Tan" loading="lazy" />
+              <span class="previous-speaker-info">
+                <strong>Robby T. Tan</strong>
+                <span>National University of Singapore</span>
+              </span>
+            </a>
+
+            <a class="previous-speaker-card" href="https://chenyangqiqi.github.io/" target="_blank" rel="noopener noreferrer">
+              <img class="previous-speaker-photo" src="https://lovif-cvpr2026-workshop.github.io/figs/YuyangHu.jpg" alt="Portrait of Yuyang Hu" loading="lazy" />
+              <span class="previous-speaker-info">
+                <strong>Yuyang Hu</strong>
+                <span>Google</span>
+              </span>
+            </a>
+
+            <a class="previous-speaker-card" href="https://scholar.google.com/citations?user=Gv1QGSMAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
+              <img class="previous-speaker-photo" src="https://github.com/lixinustc/CVPR-NTIRE2025-RainDrop-Competition.github.io/blob/main/imgs/Michael.jpg?raw=true" alt="Portrait of Michael S. Brown" loading="lazy" />
+              <span class="previous-speaker-info">
+                <strong>Michael S. Brown</strong>
+                <span>York University</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- Duplicate group for a seamless visual loop. Hidden from assistive technology. -->
+          <div class="previous-speakers-group" aria-hidden="true">
+            <a class="previous-speaker-card" href="https://scholar.google.com/citations?user=BxbKTYkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" tabindex="-1">
+              <img class="previous-speaker-photo" src="https://lovif-cvpr2026-workshop.github.io/figs/DimitrisSamaras.png" alt="" loading="lazy" />
+              <span class="previous-speaker-info"><strong>Dimitris Samaras</strong><span>Stony Brook University</span></span>
+            </a>
+
+            <a class="previous-speaker-card" href="https://tanrobby.github.io/" target="_blank" rel="noopener noreferrer" tabindex="-1">
+              <img class="previous-speaker-photo" src="https://lovif-cvpr2026-workshop.github.io/figs/robby_image_v3.jpg" alt="" loading="lazy" />
+              <span class="previous-speaker-info"><strong>Robby T. Tan</strong><span>National University of Singapore</span></span>
+            </a>
+
+            <a class="previous-speaker-card" href="https://chenyangqiqi.github.io/" target="_blank" rel="noopener noreferrer" tabindex="-1">
+              <img class="previous-speaker-photo" src="https://lovif-cvpr2026-workshop.github.io/figs/YuyangHu.jpg" alt="" loading="lazy" />
+              <span class="previous-speaker-info"><strong>Yuyang Hu</strong><span>Google</span></span>
+            </a>
+
+            <a class="previous-speaker-card" href="https://scholar.google.com/citations?user=Gv1QGSMAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" tabindex="-1">
+              <img class="previous-speaker-photo" src="https://github.com/lixinustc/CVPR-NTIRE2025-RainDrop-Competition.github.io/blob/main/imgs/Michael.jpg?raw=true" alt="" loading="lazy" />
+              <span class="previous-speaker-info"><strong>Michael S. Brown</strong><span>York University</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
