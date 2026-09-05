@@ -1940,6 +1940,427 @@
   </div>
 </section>
 
+    <!-- =========================
+     Accepted Papers & Posters
+========================= -->
+<style>
+  #accepted-papers {
+    padding: 40px 0;
+  }
+
+  .poster-session-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  .poster-session-card {
+    padding: 20px 22px;
+    border: 1px solid rgba(124, 156, 255, 0.24);
+    border-radius: 18px;
+    background: linear-gradient(
+      135deg,
+      rgba(124, 156, 255, 0.13),
+      rgba(73, 220, 177, 0.08)
+    );
+  }
+
+  .poster-session-card span {
+    display: block;
+    margin-bottom: 5px;
+    color: #aab6ea;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .poster-session-card strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1.08rem;
+  }
+
+  .poster-session-card small {
+    color: var(--muted);
+  }
+
+  .papers-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+  }
+
+  .papers-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+  }
+
+  .papers-table th,
+  .papers-table td {
+    padding: 17px 18px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .papers-table th {
+    color: #dbe2ff;
+    background: rgba(124, 156, 255, 0.12);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .papers-table th:first-child {
+    width: 56%;
+  }
+
+  .papers-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .papers-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  .paper-title {
+    color: #f5f7ff;
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .board-badge {
+    display: inline-flex;
+    padding: 6px 10px;
+    border: 1px solid rgba(73, 220, 177, 0.25);
+    border-radius: 999px;
+    color: #d7fff3;
+    background: rgba(73, 220, 177, 0.10);
+    font-size: 0.84rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .board-badge-afternoon {
+    color: #e6e1ff;
+    background: rgba(154, 124, 255, 0.12);
+    border-color: rgba(154, 124, 255, 0.28);
+  }
+
+  .poster-time {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 0.84rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 760px) {
+    .poster-session-summary {
+      grid-template-columns: 1fr;
+    }
+
+    .papers-table th,
+    .papers-table td {
+      padding: 14px;
+    }
+  }
+</style>
+
+<section id="accepted-papers">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Accepted Papers &amp; Poster Assignments</h2>
+        <p>
+          Each accepted paper is assigned a poster board in both poster
+          sessions. All times are in conference local time (CEST).
+        </p>
+      </div>
+    </div>
+
+    <div class="poster-session-summary">
+      <div class="poster-session-card">
+        <span>Poster Session I</span>
+        <strong>10:00–12:00 · Boards 101–145</strong>
+        <small>September 9, 2026</small>
+      </div>
+
+      <div class="poster-session-card">
+        <span>Poster Session II</span>
+        <strong>15:30–17:30 · Boards 324–368</strong>
+        <small>September 9, 2026</small>
+      </div>
+    </div>
+
+    <div class="papers-table-wrap">
+      <table class="papers-table">
+        <thead>
+          <tr>
+            <th>Accepted Paper</th>
+            <th>Poster Session I</th>
+            <th>Poster Session II</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="paper-title">DORCNet: Degradation-Oriented Residual Correction with Semantic Verification for All-in-One Image Restoration</td>
+            <td><span class="board-badge">Board 101</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 324</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Rate-Adaptive One-Step Diffusion Compression for AIGC Images</td>
+            <td><span class="board-badge">Board 102</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 325</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Semantic and Geometric Guidance with a Contraction Cascade for Unified Raindrop and Reflection Removal</td>
+            <td><span class="board-badge">Board 103</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 326</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">JRD-ECV: Efficient Image Coding for Machine Vision via Edge-Guided Just Recognizable Distortion Optimization</td>
+            <td><span class="board-badge">Board 104</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 327</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Patch-Derived or Register Tokens? Comparing Variable-Length Image Tokenizers</td>
+            <td><span class="board-badge">Board 105</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 328</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">The LoViF 2026 ActPhysCause Challenge: A Baseline Report on Action-Conditioned Video World Models</td>
+            <td><span class="board-badge">Board 106</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 329</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">BoxAware: Spatial-Prior-Guided Token Pruning for Video-Based 3D MLLMs</td>
+            <td><span class="board-badge">Board 107</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 330</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Progressive Learned Image Compression for Machine Perception</td>
+            <td><span class="board-badge">Board 108</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 331</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Efficient Test-Time Scaling for T2I Diffusion Models with Text Embedding Perturbation</td>
+            <td><span class="board-badge">Board 109</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 332</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">FF-AdaIR: Fidelity-First Training for Real-World All-in-One Image Restoration</td>
+            <td><span class="board-badge">Board 110</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 333</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Novel task-driven loss to restore object detector performance under image degradation</td>
+            <td><span class="board-badge">Board 111</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 334</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">The Second LoViF 2026 Challenge on Real-World All-in-One Image Restoration: Methods and Results</td>
+            <td><span class="board-badge">Board 112</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 335</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">WaveHiT-SR: Hierarchical Wavelet Network for Efficient Image Super-Resolution</td>
+            <td><span class="board-badge">Board 113</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 336</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">PlaySR: Real-time Super Resolution in Gaming</td>
+            <td><span class="board-badge">Board 114</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 337</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Reproducibility-First Ultra-Low Bitrate Image Compression with an Entropy-Coded AEIC Codec</td>
+            <td><span class="board-badge">Board 115</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 338</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">MVTrack: Ultrafast Appearance-Free Moving Object Tracking from Compressed Bitstreams</td>
+            <td><span class="board-badge">Board 116</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 339</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Edit2Restore: Few-Shot Image Restoration via Parameter-Efficient Adaptation of Pre-trained Editing Models</td>
+            <td><span class="board-badge">Board 117</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 340</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">UGLF: Towards a Unified Generative Framework for Light Field Reconstruction</td>
+            <td><span class="board-badge">Board 118</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 341</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">DiverseVAR: Balancing Diversity and Quality of Next-Scale Visual Autoregressive Models</td>
+            <td><span class="board-badge">Board 119</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 342</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Noise Frequencies Let Pixel-Space Diffusion Priors Detect Native-Resolution Images</td>
+            <td><span class="board-badge">Board 120</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 343</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Frozen Decoder, Better Bits: Per-Image Latent Rate-Distortion Optimization for Ultra-Low Bitrate Compression</td>
+            <td><span class="board-badge">Board 121</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 344</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">MagnifiQ: Patch-aware Text Guided Progressive Upscaling for High-Resolution Image Restoration</td>
+            <td><span class="board-badge">Board 122</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 345</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">LoViF 2026 The First Challenge on Unified Removal of Raindrops and Reflections: Methods and Results</td>
+            <td><span class="board-badge">Board 123</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 346</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">SNM-VFI: Symmetric Nonlinear Motion Guided Generative Video Frame Interpolation</td>
+            <td><span class="board-badge">Board 124</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 347</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation</td>
+            <td><span class="board-badge">Board 125</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 348</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">FusionRelight: Relighting Portraits in Real Time via Hybrid Domain Knowledge Fusion</td>
+            <td><span class="board-badge">Board 126</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 349</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images: Methods and Results</td>
+            <td><span class="board-badge">Board 127</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 350</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">MAFNet-UR³: Multi-Observation Fusion for Unified Raindrop and Reflection Removal</td>
+            <td><span class="board-badge">Board 128</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 351</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Gradual Binary Search and Dimension Expansion : A general method for activation quantization in LLMs</td>
+            <td><span class="board-badge">Board 129</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 352</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">NoiseTilt: Noise-Tilted Reverse Kernels for Diffusion Reward Alignment</td>
+            <td><span class="board-badge">Board 130</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 353</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">A Causally Grounded Taxonomy for Image Degradation Robustness Evaluation</td>
+            <td><span class="board-badge">Board 131</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 354</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Parameter-Efficient Adaptation of mPLUG-Owl2 via Pixel-Level Visual Prompts for NR-IQA</td>
+            <td><span class="board-badge">Board 132</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 355</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">LoViF 2026 Challenge on Ultra-Low Bitrate Image Compression: Methods and Results</td>
+            <td><span class="board-badge">Board 133</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 356</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">TOC-SR: Task-Optimal Compact diffusion for Image Super Resolution</td>
+            <td><span class="board-badge">Board 134</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 357</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">3D-Consistent Multi-View Editing by Correspondence Guidance</td>
+            <td><span class="board-badge">Board 135</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 358</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Selective Operation Quantization for Vision State Space Models</td>
+            <td><span class="board-badge">Board 136</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 359</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Visual Autoregressive Priors for RAW-to-sRGB Image Signal Processing</td>
+            <td><span class="board-badge">Board 137</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 360</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Transferring Image Compression from Human Perception to Multi-Machine Perception</td>
+            <td><span class="board-badge">Board 138</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 361</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">LoViF 2026 AIGC Image Compression Challenge: Methods and Results</td>
+            <td><span class="board-badge">Board 139</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 362</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">Adapting Sparse Mixture-of-Experts Layers in CNNs for Compiler-Based Edge Deployment</td>
+            <td><span class="board-badge">Board 140</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 363</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+
+          <tr>
+            <td class="paper-title">PixSDS: Why Latent SDS Makes Noisy Pixels</td>
+            <td><span class="board-badge">Board 141</span><span class="poster-time">10:00–12:00</span></td>
+            <td><span class="board-badge board-badge-afternoon">Board 364</span><span class="poster-time">15:30–17:30</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
     <section id="venue">
       <div class="container">
         <div class="section-head">
