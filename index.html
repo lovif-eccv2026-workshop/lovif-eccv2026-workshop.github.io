@@ -909,6 +909,7 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#cfp">Call for Papers</a>
+        <a href="#program">Program</a>
          <a href="#awards">Paper Awards</a>
         <a href="#speakers">Speakers</a>
         <a href="#dates">Dates</a>
@@ -1319,6 +1320,515 @@
               <span class="previous-speaker-info"><strong>Michael S. Brown</strong><span>York University</span></span>
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!--
+  LoViF @ ECCV 2026 — Program section
+  Paste this entire block into the workshop page where the program should appear.
+  The styles are scoped to #program, so they will not change the other sections.
+-->
+
+<style>
+  #program {
+    --program-accent: var(--accent, #7c9cff);
+    --program-accent-soft: rgba(124, 156, 255, 0.14);
+    --program-keynote: #8fa8ff;
+    --program-oral: #64d6b2;
+    --program-challenge: #f4bd61;
+    --program-break: #aeb7d5;
+    --program-surface: rgba(255, 255, 255, 0.055);
+    --program-border: rgba(255, 255, 255, 0.12);
+    --program-muted: var(--muted, #aeb7d5);
+    scroll-margin-top: 88px;
+  }
+
+  #program *,
+  #program *::before,
+  #program *::after {
+    box-sizing: border-box;
+  }
+
+  #program .program-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+
+  #program .program-head h2 {
+    margin: 0;
+  }
+
+  #program .program-kicker {
+    margin: 0 0 7px;
+    color: var(--program-muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  #program .program-date {
+    margin: 8px 0 0;
+    color: var(--program-muted);
+    line-height: 1.55;
+  }
+
+  #program .program-status {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    color: #dbe3ff;
+    background: var(--program-accent-soft);
+    border: 1px solid rgba(124, 156, 255, 0.32);
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  #program .program-status::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--program-accent);
+    box-shadow: 0 0 0 4px rgba(124, 156, 255, 0.13);
+  }
+
+  #program .program-note {
+    margin: 0 0 26px;
+    padding: 15px 18px;
+    color: var(--program-muted);
+    background: rgba(124, 156, 255, 0.07);
+    border-left: 3px solid var(--program-accent);
+    border-radius: 0 12px 12px 0;
+    line-height: 1.55;
+  }
+
+  #program .program-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 0 0 30px;
+    color: var(--program-muted);
+    font-size: 0.9rem;
+  }
+
+  #program .program-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #program .program-legend i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+
+  #program .program-session {
+    margin-top: 32px;
+  }
+
+  #program .program-session-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  #program .program-session-heading h3 {
+    margin: 0;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+  }
+
+  #program .program-session-heading span {
+    color: var(--program-muted);
+    font-size: 0.88rem;
+  }
+
+  #program .program-list {
+    overflow: hidden;
+    background: var(--program-surface);
+    border: 1px solid var(--program-border);
+    border-radius: 20px;
+  }
+
+  #program .program-item {
+    --item-color: var(--program-break);
+    display: grid;
+    grid-template-columns: 118px 128px minmax(0, 1fr);
+    align-items: start;
+    gap: 18px;
+    min-height: 76px;
+    padding: 17px 20px 17px 23px;
+    border-bottom: 1px solid var(--program-border);
+    position: relative;
+  }
+
+  #program .program-item:last-child {
+    border-bottom: 0;
+  }
+
+  #program .program-item::before {
+    content: "";
+    position: absolute;
+    inset: 14px auto 14px 0;
+    width: 4px;
+    background: var(--item-color);
+    border-radius: 0 4px 4px 0;
+  }
+
+  #program .program-item.keynote { --item-color: var(--program-keynote); }
+  #program .program-item.oral { --item-color: var(--program-oral); }
+  #program .program-item.challenge { --item-color: var(--program-challenge); }
+  #program .program-item.break { --item-color: var(--program-break); }
+
+  #program .program-time {
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+    font-weight: 750;
+    white-space: nowrap;
+  }
+
+  #program .program-type {
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+    max-width: 100%;
+    padding: 4px 8px;
+    color: var(--item-color);
+    background: color-mix(in srgb, var(--item-color) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--item-color) 35%, transparent);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.055em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  #program .program-title {
+    color: #ffffff;
+    font-weight: 720;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  #program .program-title a {
+    color: inherit;
+    text-decoration-color: rgba(143, 168, 255, 0.55);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  #program .program-title a:hover,
+  #program .program-title a:focus-visible {
+    color: var(--program-accent);
+  }
+
+  #program .program-detail {
+    display: block;
+    margin-top: 5px;
+    color: var(--program-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  #program .tbd {
+    display: inline-flex;
+    margin-left: 7px;
+    padding: 2px 6px;
+    color: #dbe3ff;
+    background: rgba(124, 156, 255, 0.14);
+    border: 1px solid rgba(124, 156, 255, 0.28);
+    border-radius: 6px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1.3;
+    vertical-align: 0.12em;
+  }
+
+  @media (max-width: 760px) {
+    #program .program-head,
+    #program .program-session-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #program .program-item {
+      grid-template-columns: 102px minmax(0, 1fr);
+      gap: 8px 14px;
+      padding: 16px 16px 16px 21px;
+    }
+
+    #program .program-type {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    #program .program-content {
+      grid-column: 1 / -1;
+      padding-top: 2px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #program .program-item {
+      grid-template-columns: 1fr;
+    }
+
+    #program .program-type,
+    #program .program-content {
+      grid-column: 1;
+    }
+  }
+</style>
+
+<section id="program">
+  <div class="container">
+    <div class="program-head">
+      <div>
+        <p class="program-kicker">LoViF @ ECCV 2026</p>
+        <h2>Program <span class="tbd">TBD</span></h2>
+        <p class="program-date">September 9, 2026 · Malmö, Sweden · All times are in CEST (UTC+2)</p>
+      </div>
+      <div class="program-status">Initial Schedule</div>
+    </div>
+
+    <p class="program-note">
+      This is an initial program. Talk times, presentation order, and session details may be adjusted. The final schedule will be posted here once confirmed.
+    </p>
+
+    <div class="program-legend" aria-label="Program legend">
+      <span><i style="background: var(--program-keynote)"></i>Keynote Talk</span>
+      <span><i style="background: var(--program-oral)"></i>Oral Presentation</span>
+      <span><i style="background: var(--program-challenge)"></i>Challenge Report</span>
+      <span><i style="background: var(--program-break)"></i>Break / Workshop Activity</span>
+    </div>
+
+    <div class="program-session">
+      <div class="program-session-heading">
+        <h3>Morning Session</h3>
+        <span>08:30–12:00</span>
+      </div>
+
+      <div class="program-list">
+        <div class="program-item break">
+          <time class="program-time">08:30–08:40</time>
+          <span class="program-type">Opening</span>
+          <div class="program-content"><div class="program-title">Opening Remarks</div></div>
+        </div>
+
+        <div class="program-item keynote">
+          <time class="program-time">08:40–09:10</time>
+          <span class="program-type">Keynote · 30 min</span>
+          <div class="program-content">
+            <div class="program-title">Ranjay Krishna</div>
+            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
+          </div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">09:10–09:20</time>
+          <span class="program-type">Oral 01</span>
+          <div class="program-content"><div class="program-title">DiverseVAR: Balancing Diversity and Quality of Next-Scale Visual Autoregressive Models</div></div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">09:20–09:30</time>
+          <span class="program-type">Oral 02</span>
+          <div class="program-content"><div class="program-title">NoiseTilt: Noise-Tilted Reverse Kernels for Diffusion Reward Alignment</div></div>
+        </div>
+
+        <div class="program-item keynote">
+          <time class="program-time">09:30–10:00</time>
+          <span class="program-type">Keynote · 30 min</span>
+          <div class="program-content">
+            <div class="program-title">Xiaojuan Qi</div>
+            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
+          </div>
+        </div>
+
+        <div class="program-item break">
+          <time class="program-time">10:00–10:10</time>
+          <span class="program-type">Break</span>
+          <div class="program-content"><div class="program-title">Coffee Break</div></div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">10:10–10:20</time>
+          <span class="program-type">Oral 03</span>
+          <div class="program-content"><div class="program-title">3D-Consistent Multi-View Editing by Correspondence Guidance</div></div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">10:20–10:30</time>
+          <span class="program-type">Oral 04</span>
+          <div class="program-content"><div class="program-title">Patch-Derived or Register Tokens? Comparing Variable-Length Image Tokenizers</div></div>
+        </div>
+
+        <div class="program-item keynote">
+          <time class="program-time">10:30–11:00</time>
+          <span class="program-type">Keynote · 30 min</span>
+          <div class="program-content">
+            <div class="program-title">Mike Zheng Shou</div>
+            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
+          </div>
+        </div>
+
+        <div class="program-item keynote">
+          <time class="program-time">11:00–11:30</time>
+          <span class="program-type">Keynote · 30 min</span>
+          <div class="program-content">
+            <div class="program-title">Zhiwei Xiong</div>
+            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
+          </div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">11:30–11:40</time>
+          <span class="program-type">Oral 05</span>
+          <div class="program-content"><div class="program-title">Selective Operation Quantization for Vision State Space Models</div></div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">11:40–11:50</time>
+          <span class="program-type">Oral 06</span>
+          <div class="program-content"><div class="program-title">JRD-ECV: Efficient Image Coding for Machine Vision via Edge-Guided Just Recognizable Distortion Optimization</div></div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">11:50–12:00</time>
+          <span class="program-type">Oral 07</span>
+          <div class="program-content"><div class="program-title">Frozen Decoder, Better Bits: Per-Image Latent Rate-Distortion Optimization for Ultra-Low Bitrate Compression</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-session">
+      <div class="program-session-heading">
+        <h3>Lunch Break</h3>
+        <span>12:00–13:40</span>
+      </div>
+    </div>
+
+    <div class="program-session">
+      <div class="program-session-heading">
+        <h3>Afternoon Session</h3>
+        <span>13:40–18:00</span>
+      </div>
+
+      <div class="program-list">
+        <div class="program-item oral">
+          <time class="program-time">13:40–13:50</time>
+          <span class="program-type">Oral 08</span>
+          <div class="program-content"><div class="program-title">Presentation title <span class="tbd">TBD</span></div></div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">13:50–14:00</time>
+          <span class="program-type">Oral 09</span>
+          <div class="program-content"><div class="program-title">Presentation title <span class="tbd">TBD</span></div></div>
+        </div>
+
+        <div class="program-item keynote">
+          <time class="program-time">14:00–14:30</time>
+          <span class="program-type">Keynote · 30 min</span>
+          <div class="program-content">
+            <div class="program-title">Jinjin Gu</div>
+            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
+          </div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">14:30–14:40</time>
+          <span class="program-type">Oral 10</span>
+          <div class="program-content"><div class="program-title">MAFNet-UR³: Multi-Observation Fusion for Unified Raindrop and Reflection Removal</div></div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">14:40–14:50</time>
+          <span class="program-type">Oral 11</span>
+          <div class="program-content">
+            <div class="program-title">PlaySR: Real-time Super Resolution in Gaming</div>
+            <span class="program-detail">Presented in person by an author representative</span>
+          </div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">14:50–15:00</time>
+          <span class="program-type">Oral 12</span>
+          <div class="program-content"><div class="program-title">TOC-SR: Task-Optimal Compact Diffusion for Image Super Resolution</div></div>
+        </div>
+
+        <div class="program-item break">
+          <time class="program-time">15:00–15:10</time>
+          <span class="program-type">Break</span>
+          <div class="program-content"><div class="program-title">Coffee Break</div></div>
+        </div>
+
+        <div class="program-item oral">
+          <time class="program-time">15:10–15:20</time>
+          <span class="program-type">Oral 13</span>
+          <div class="program-content">
+            <div class="program-title">
+              <a href="https://openreview.net/forum?id=ZEsz9n4bWR" target="_blank" rel="noopener noreferrer">UGLF: Towards a Unified Generative Framework for Light Field Reconstruction</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-item challenge">
+          <time class="program-time">15:20–15:45</time>
+          <span class="program-type">Challenge Session</span>
+          <div class="program-content">
+            <div class="program-title">Challenge Reports <span class="tbd">TBD</span></div>
+            <span class="program-detail">Challenge Report 1 · Challenge Report 2 · Challenge Report 3 — titles and presentation order to be confirmed</span>
+          </div>
+        </div>
+
+        <div class="program-item keynote">
+          <time class="program-time">15:45–16:15</time>
+          <span class="program-type">Keynote · 30 min</span>
+          <div class="program-content">
+            <div class="program-title">Jiajun Wu</div>
+            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
+          </div>
+        </div>
+
+        <div class="program-item keynote">
+          <time class="program-time">16:15–16:45</time>
+          <span class="program-type">Keynote · 30 min</span>
+          <div class="program-content">
+            <div class="program-title">Vishal M. Patel</div>
+            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
+          </div>
+        </div>
+
+        <div class="program-item keynote">
+          <time class="program-time">16:45–17:35</time>
+          <span class="program-type">Keynote · 50 min</span>
+          <div class="program-content">
+            <div class="program-title">Peyman Milanfar</div>
+            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
+          </div>
+        </div>
+
+        <div class="program-item break">
+          <time class="program-time">17:35–18:00</time>
+          <span class="program-type">Closing</span>
+          <div class="program-content"><div class="program-title">Awards and Closing Remarks</div></div>
         </div>
       </div>
     </div>
