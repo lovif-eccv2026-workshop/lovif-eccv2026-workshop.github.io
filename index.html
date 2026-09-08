@@ -910,6 +910,8 @@
         <a href="#about">About</a>
         <a href="#cfp">Call for Papers</a>
         <a href="#program">Program</a>
+        <a href="#video-records">Video Records</a>
+        <a href="#challenge-reports">Challenge Reports</a>
          <a href="#awards">Paper Awards</a>
         <a href="#speakers">Speakers</a>
         <a href="#dates">Dates</a>
@@ -1656,7 +1658,7 @@
           <time class="program-time">09:30–10:00</time>
           <span class="program-type">Keynote Talk</span>
           <div class="program-content">
-            <div class="program-title">Xiaojuan Qi</div>
+            <div class="program-title">Zhiwei Xiong</div>
             <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
           </div>
         </div>
@@ -1688,25 +1690,25 @@
           </div>
         </div>
 
-        <div class="program-item keynote">
-          <time class="program-time">11:00–11:30</time>
-          <span class="program-type">Keynote Talk</span>
-          <div class="program-content">
-            <div class="program-title">Zhiwei Xiong</div>
-            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
-          </div>
-        </div>
-
         <div class="program-item oral">
-          <time class="program-time">11:30–11:40</time>
+          <time class="program-time">11:00–11:10</time>
           <span class="program-type">Oral 05</span>
           <div class="program-content"><div class="program-title">Selective Operation Quantization for Vision State Space Models</div></div>
         </div>
 
         <div class="program-item oral">
-          <time class="program-time">11:40–11:50</time>
+          <time class="program-time">11:10–11:20</time>
           <span class="program-type">Oral 06</span>
           <div class="program-content"><div class="program-title">JRD-ECV: Efficient Image Coding for Machine Vision via Edge-Guided Just Recognizable Distortion Optimization</div></div>
+        </div>
+
+        <div class="program-item keynote">
+          <time class="program-time">11:20–11:50</time>
+          <span class="program-type">Keynote Talk</span>
+          <div class="program-content">
+            <div class="program-title">Xiaojuan Qi</div>
+            <span class="program-detail">Talk title <span class="tbd">TBD</span></span>
+          </div>
         </div>
 
         <div class="program-item oral">
@@ -1831,6 +1833,205 @@
           <div class="program-content"><div class="program-title">Awards and Closing Remarks</div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #video-records .video-records-note,
+  #challenge-reports .video-records-note {
+    margin: 0 0 20px;
+    color: var(--muted);
+  }
+
+  #video-records .video-records-list,
+  #challenge-reports .video-records-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  #video-records .video-record-item,
+  #challenge-reports .video-record-item {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: center;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+  }
+
+  #video-records .video-record-label,
+  #challenge-reports .video-record-label {
+    display: inline-flex;
+    justify-content: center;
+    padding: 7px 11px;
+    border-radius: 999px;
+    color: #d7fff3;
+    background: rgba(73, 220, 177, 0.10);
+    border: 1px solid rgba(73, 220, 177, 0.24);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #video-records .video-record-title,
+  #challenge-reports .video-record-title {
+    color: #f5f7ff;
+    font-weight: 650;
+    line-height: 1.45;
+  }
+
+  #video-records .video-record-links,
+  #challenge-reports .video-record-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  #video-records .video-record-link,
+  #challenge-reports .video-record-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 14px;
+    border-radius: 999px;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    font-size: 0.88rem;
+    font-weight: 650;
+  }
+
+  #video-records .video-record-link:hover,
+  #video-records .video-record-link:focus-visible,
+  #challenge-reports .video-record-link:hover,
+  #challenge-reports .video-record-link:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(124, 156, 255, 0.24);
+  }
+
+  @media (max-width: 760px) {
+    #video-records .video-record-item,
+    #challenge-reports .video-record-item {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    #video-records .video-record-label,
+    #challenge-reports .video-record-label {
+      width: fit-content;
+    }
+
+    #video-records .video-record-links,
+    #challenge-reports .video-record-links {
+      justify-content: flex-start;
+    }
+  }
+</style>
+
+<section id="video-records">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Oral Presentation (Record Videos)</h2>
+        <p>Pre-recorded oral presentations are listed separately from the in-person workshop program.</p>
+      </div>
+    </div>
+
+    <p class="video-records-note">The playback schedule for these presentations will be announced separately.</p>
+
+    <div class="video-records-list">
+      <article class="video-record-item">
+        <span class="video-record-label">Video Record</span>
+        <div class="video-record-title">DORCNet: Degradation-Oriented Residual Correction with Semantic Verification for All-in-One Image Restoration</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://github.com/lovif-eccv2026-workshop/lovif-eccv2026-workshop.github.io/releases/download/video-records-2026/dorcnet.mp4" target="_blank" rel="noopener noreferrer">Watch Video</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Video Record</span>
+        <div class="video-record-title">Transferring Image Compression from Human Perception to Multi-Machine Perception</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://github.com/lovif-eccv2026-workshop/lovif-eccv2026-workshop.github.io/releases/download/video-records-2026/transferring-image-compression.mp4" target="_blank" rel="noopener noreferrer">Watch Video</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Video Record</span>
+        <div class="video-record-title">FusionRelight: Relighting Portraits in Real Time via Hybrid Domain Knowledge Fusion</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://github.com/lovif-eccv2026-workshop/lovif-eccv2026-workshop.github.io/releases/download/video-records-2026/fusionrelight.mp4" target="_blank" rel="noopener noreferrer">Watch Video</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Video Record</span>
+        <div class="video-record-title">InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://github.com/lovif-eccv2026-workshop/lovif-eccv2026-workshop.github.io/releases/download/video-records-2026/insighttok.mp4" target="_blank" rel="noopener noreferrer">Watch Video</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Video Record</span>
+        <div class="video-record-title">TOC-SR: Task-Optimal Compact Diffusion for Image Super Resolution</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://github.com/lovif-eccv2026-workshop/lovif-eccv2026-workshop.github.io/releases/download/video-records-2026/toc-sr-akshay.mp4" target="_blank" rel="noopener noreferrer">Watch Video</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Video Record</span>
+        <div class="video-record-title">SNM-VFI: Symmetric Nonlinear Motion Guided Generative Video Frame Interpolation</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://github.com/lovif-eccv2026-workshop/lovif-eccv2026-workshop.github.io/releases/download/video-records-2026/snm-vfi.mp4" target="_blank" rel="noopener noreferrer">Watch Video</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="challenge-reports">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Challenge Reports</h2>
+        <p>Challenge reports are listed separately from the in-person oral program.</p>
+      </div>
+    </div>
+
+    <p class="video-records-note">The presentation order for the challenge session will be announced separately.</p>
+
+    <div class="video-records-list">
+      <article class="video-record-item">
+        <span class="video-record-label">Challenge Report</span>
+        <div class="video-record-title">The LoViF 2026 ActPhysCause Challenge: A Baseline Report on Action-Conditioned Video World Models</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://openreview.net/forum?id=vbxZVVKuxh" target="_blank" rel="noopener noreferrer">View Paper</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Challenge Report</span>
+        <div class="video-record-title">LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images: Methods and Results</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://openreview.net/forum?id=MG4JvMg2IG" target="_blank" rel="noopener noreferrer">View Paper</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Challenge Report</span>
+        <div class="video-record-title">LoViF 2026 AIGC Image Compression Challenge: Methods and Results</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://openreview.net/forum?id=41hfEpLx7Z" target="_blank" rel="noopener noreferrer">View Paper</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Challenge Report</span>
+        <div class="video-record-title">LoViF 2026 Challenge on Ultra-Low Bitrate Image Compression: Methods and Results</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://openreview.net/forum?id=CSFBAUIvM4" target="_blank" rel="noopener noreferrer">View Paper</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Challenge Report</span>
+        <div class="video-record-title">LoViF 2026 The First Challenge on Unified Removal of Raindrops and Reflections: Methods and Results</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://openreview.net/forum?id=Q2NjVSWPJU" target="_blank" rel="noopener noreferrer">View Paper</a></div>
+      </article>
+
+      <article class="video-record-item">
+        <span class="video-record-label">Challenge Report</span>
+        <div class="video-record-title">The Second LoViF 2026 Challenge on Real-World All-in-One Image Restoration: Methods and Results</div>
+        <div class="video-record-links"><a class="video-record-link" href="https://openreview.net/forum?id=mNWsqvlNiB" target="_blank" rel="noopener noreferrer">View Paper</a></div>
+      </article>
     </div>
   </div>
 </section>
