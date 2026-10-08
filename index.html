@@ -304,11 +304,15 @@
       min-height: 180px;
     }
 
-    .certificate-download { padding-top: 16px; color: var(--muted); font-size: 0.95rem; }
-    .certificate-row { display: flex; align-items: baseline; gap: 8px 20px; padding: 8px 0; }
-    .certificate-row span { flex: 1; }
+    #awards { scroll-margin-top: 88px; }
+    .certificate-download { font-size: 0.95rem; }
+    .certificate-row { display: flex; align-items: center; gap: 8px 24px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .certificate-row:last-child { border-bottom: 0; }
+    .certificate-details { flex: 1; min-width: 0; }
+    .certificate-award { display: block; color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+    .certificate-title { color: var(--text); }
     .certificate-row a { color: var(--accent); text-decoration: underline; white-space: nowrap; }
-    @media (max-width: 760px) { .certificate-row { flex-direction: column; gap: 2px; } }
+    @media (max-width: 760px) { .certificate-row { flex-direction: column; align-items: flex-start; gap: 8px; } }
 
     .tag {
       display: inline-flex;
@@ -2833,14 +2837,19 @@
   }
 </style>
 
-<div id="awards" class="container certificate-download">
-  <div class="certificate-row"><span>InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation</span><a href="assets/certificates/insighttok-outstanding-paper.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
-  <div class="certificate-row"><span>NoiseTilt: Noise-Tilted Reverse Kernels for Diffusion Reward Alignment</span><a href="assets/certificates/noisetilt-outstanding-paper.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
-  <div class="certificate-row"><span>PlaySR: Real-time Super Resolution in Gaming</span><a href="assets/certificates/playsr-outstanding-paper-runner-up.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
-  <div class="certificate-row"><span>Selective Operation Quantization for Vision State Space Models</span><a href="assets/certificates/selective-operation-quantization-outstanding-paper-runner-up.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
-  <div class="certificate-row"><span>Frozen Decoder, Better Bits: Per-Image Latent Rate–Distortion Optimization for Ultra-Low Bitrate Compression</span><a href="assets/certificates/frozen-decoder-better-bits-outstanding-challenge-paper.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
-  <div class="certificate-row"><span>MAFNet-UR³: Mask-Aware Fusion Network for Unified Raindrop and Reflection Removal</span><a href="assets/certificates/mafnet-ur3-outstanding-challenge-paper-runner-up.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
-</div>
+<section id="awards">
+  <div class="container">
+    <div class="section-head"><h2>Awards</h2></div>
+    <div class="certificate-download">
+      <div class="certificate-row"><div class="certificate-details"><span class="certificate-award">Outstanding Paper Award</span><span class="certificate-title">InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation</span></div><a href="assets/certificates/insighttok-outstanding-paper.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
+      <div class="certificate-row"><div class="certificate-details"><span class="certificate-award">Outstanding Paper Award</span><span class="certificate-title">NoiseTilt: Noise-Tilted Reverse Kernels for Diffusion Reward Alignment</span></div><a href="assets/certificates/noisetilt-outstanding-paper.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
+      <div class="certificate-row"><div class="certificate-details"><span class="certificate-award">Outstanding Paper Runner-Up Award</span><span class="certificate-title">PlaySR: Real-time Super Resolution in Gaming</span></div><a href="assets/certificates/playsr-outstanding-paper-runner-up.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
+      <div class="certificate-row"><div class="certificate-details"><span class="certificate-award">Outstanding Paper Runner-Up Award</span><span class="certificate-title">Selective Operation Quantization for Vision State Space Models</span></div><a href="assets/certificates/selective-operation-quantization-outstanding-paper-runner-up.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
+      <div class="certificate-row"><div class="certificate-details"><span class="certificate-award">Outstanding Challenge Paper Award</span><span class="certificate-title">Frozen Decoder, Better Bits: Per-Image Latent Rate–Distortion Optimization for Ultra-Low Bitrate Compression</span></div><a href="assets/certificates/frozen-decoder-better-bits-outstanding-challenge-paper.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
+      <div class="certificate-row"><div class="certificate-details"><span class="certificate-award">Outstanding Challenge Paper Runner-Up Award</span><span class="certificate-title">MAFNet-UR³: Mask-Aware Fusion Network for Unified Raindrop and Reflection Removal</span></div><a href="assets/certificates/mafnet-ur3-outstanding-challenge-paper-runner-up.pdf" target="_blank" rel="noopener noreferrer">Download Certificate</a></div>
+    </div>
+  </div>
+</section>
 
 <section id="accepted-papers">
   <div class="container">
